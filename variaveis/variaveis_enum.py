@@ -1,0 +1,2 @@
+LOGIN = 'Login'
+TOKEN = 'Token'
