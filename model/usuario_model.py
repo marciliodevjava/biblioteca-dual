@@ -20,3 +20,13 @@ class UsuarioModel(db.Model):
         self.ddd = ddd
         self.telefone = telefone
         self.senha = senha
+
+    def json(self):
+        return {
+            'nome': self.nome,
+            'email': self.email,
+            'genero': self.genero,
+            'ddi': self.ddi,
+            'ddd': self.ddd,
+            'telefone': self.telefone
+        }
