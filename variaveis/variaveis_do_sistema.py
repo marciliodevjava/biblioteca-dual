@@ -1,6 +1,6 @@
 import datetime
 
-BASE_PATH_HTTP = '/pro'
+BASE_PATH_HTTP = '/biblioteca'
 
 SQLALCHEMY_DATABASE_URI = \
     '{SGBD}://{usuario}:{senha}@{servidor}:{port}/{database}'.format(
