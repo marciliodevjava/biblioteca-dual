@@ -6,11 +6,11 @@ class UsuarioResource(Resource):
     def post(self):
         pass
 
-    def get(self):
+    def get(self, id):
         pass
 
-    def put(self):
+    def put(self, id):
         pass
 
-    def delete(self):
+    def delete(self, id):
         pass
