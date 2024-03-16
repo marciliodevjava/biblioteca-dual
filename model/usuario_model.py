@@ -11,3 +11,12 @@ class UsuarioModel(db.Model):
     ddd = db.Column(db.Integer(4), nullable=False)
     telefone = db.Column(db.Integer(9), nullable=False)
     senha = db.Column(db.String(100), nullable=False)
+
+    def __init__(self, nome, email, genero, ddi, ddd, telefone, senha):
+        self.nome = nome
+        self.email = email
+        self.genero = genero
+        self.ddi = ddi
+        self.ddd = ddd
+        self.telefone = telefone
+        self.senha = senha
