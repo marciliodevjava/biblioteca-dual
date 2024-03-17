@@ -1,14 +1,18 @@
+from utils.encripty_pasword import Senha
+from utils.formatador_dados import FormatadorDados
+
+
 class UsuarioService:
 
     @classmethod
     def cadastrar_usuario(cls, usuario):
-        nome = usuario['nome']
-        email = usuario['email']
-        genero = usuario['genero']
-        ddi = usuario['ddi']
-        ddd = usuario['ddd']
-        telefone = usuario['telefone']
-        senha = usuario['senha']
+        nome = FormatadorDados.formatador_nome(usuario['nome'])
+        email = FormatadorDados.formatador_email(usuario['email'])
+        genero = FormatadorDados.formatador_genero(usuario['genero'])
+        ddi = FormatadorDados.formatador_ddi(usuario['ddi'])
+        ddd = FormatadorDados.formatador_ddd(usuario['ddd'])
+        telefone = FormatadorDados.formatador_telefone(usuario['telefone'])
+        senha = Senha.gerador_senha(usuario['senha'])
 
     @classmethod
     def buscar_usuario(cls, id):
