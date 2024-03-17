@@ -18,4 +18,10 @@ class UsuarioMessage(Enum):
 
 
 class UsuarioFormulario(Enum):
+    O_CAMPO_SENHA = 'O campo senha não foi enviado.'
+    O_CAMPO_TELEFONE = 'O campo telefoone não foi enviado.'
+    O_CAMPO_DDD = 'O campo ddd não foi enviado.'
+    O_CAMPO_DDI = 'O campo ddi não foi enviado.'
+    O_CAMPO_GENERO = 'O campo genero não foi enviado.'
+    O_CAMPO_EMAIL = 'O campo email não foi enviado.'
     O_CAMPO_NOME = 'O campo nome não foi enviado.'
