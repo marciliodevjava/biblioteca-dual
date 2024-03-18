@@ -34,8 +34,21 @@ class UsuarioModel(db.Model):
     @classmethod
     def salvar_usuario(cls, usuario):
         try:
+            usuario = cls.buscar_usuario(usuario['email'])
+            if usuario:
+                return False
             db.session.add(usuario)
             db.session.commit()
             return usuario
         except BaseException:
+            return None
+
+    @classmethod
+    def buscar_usuario(cls, email):
+        try:
+            usuario = db.session.query(cls).filter_by(email=email).first()
+            if usuario:
+                return usuario
+            return None
+        except BaseException as e:
             return None
