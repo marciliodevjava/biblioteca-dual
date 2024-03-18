@@ -15,6 +15,7 @@ class ErroServidorMessage(Enum):
 
 class UsuarioMessage(Enum):
     USUARIO_CADASTRO_COM_SUCESSO = 'Usuario cadastrado com sucesso.'
+    USUARIO_JA_EXISTE = 'Usuario já existe na base de dados.'
 
 
 class UsuarioFormulario(Enum):
