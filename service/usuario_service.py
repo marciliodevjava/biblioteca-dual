@@ -1,3 +1,4 @@
+from model.usuario_model import UsuarioModel
 from utils.encripty_pasword import Senha
 from utils.formatador_dados import FormatadorDados
 
@@ -13,6 +14,8 @@ class UsuarioService:
         ddd = FormatadorDados.formatador_ddd(usuario['ddd'])
         telefone = FormatadorDados.formatador_telefone(usuario['telefone'])
         senha = Senha.gerador_senha(usuario['senha'])
+        usuario = UsuarioModel(nome, email, genero, ddi, ddd, telefone, senha)
+        usuario = UsuarioModel.salvar_usuario(usuario)
 
     @classmethod
     def buscar_usuario(cls, id):
