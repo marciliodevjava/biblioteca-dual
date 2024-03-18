@@ -1,3 +1,4 @@
+from enumerate.message import UsuarioMessage
 from model.usuario_model import UsuarioModel
 from utils.encripty_pasword import Senha
 from utils.formatador_dados import FormatadorDados
@@ -16,6 +17,14 @@ class UsuarioService:
         senha = Senha.gerador_senha(usuario['senha'])
         usuario = UsuarioModel(nome, email, genero, ddi, ddd, telefone, senha)
         usuario = UsuarioModel.salvar_usuario(usuario)
+        if usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_CADASTRO_COM_SUCESSO.value,
+                'usuario': usuario.json()
+            }
+        return {
+            'message': UsuarioMessage.USUARIO_JA_EXISTE.value
+        }
 
     @classmethod
     def buscar_usuario(cls, id):
