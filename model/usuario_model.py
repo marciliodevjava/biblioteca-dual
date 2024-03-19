@@ -52,3 +52,11 @@ class UsuarioModel(db.Model):
             return None
         except BaseException as e:
             return None
+
+    @classmethod
+    def atualizar_usuario(cls):
+        pass
+
+    @classmethod
+    def deletar_usuario(cls):
+        pass
