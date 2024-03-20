@@ -14,6 +14,8 @@ class ErroServidorMessage(Enum):
 
 
 class UsuarioMessage(Enum):
+    USUARIO_NAO_ENCONTRADO = 'Usuário não encontrado.'
+    USUARIO_BUSCADO_COM_SUCESSO = 'Usuário buscado com sucesso.'
     USUARIO_CADASTRO_COM_SUCESSO = 'Usuario cadastrado com sucesso.'
     USUARIO_JA_EXISTE = 'Usuario já existe na base de dados.'
 
