@@ -16,7 +16,12 @@ class UsuarioResource(Resource):
         return usuario, 201
 
     def get(self, id):
-        pass
+        usuario = UsuarioService.buscar_usuario(id)
+        if not usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_NAO_ENCONTRADO.value
+            }, 404
+        return usuario, 200
 
     def put(self, id):
         pass
