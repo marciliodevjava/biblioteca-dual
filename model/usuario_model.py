@@ -60,3 +60,13 @@ class UsuarioModel(db.Model):
     @classmethod
     def deletar_usuario(cls):
         pass
+
+    @classmethod
+    def buscar_usuario_id(cls, id):
+        try:
+            usuario = db.session.query(cls).filter_by(id=id).first()
+            if usuario:
+                return usuario
+            return None
+        except BaseException as e:
+            return None
