@@ -28,7 +28,13 @@ class UsuarioService:
 
     @classmethod
     def buscar_usuario(cls, id):
-        pass
+        usuario = UsuarioModel.buscar_usuario_id(id)
+        if usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_BUSCADO_COM_SUCESSO.value,
+                'usuario': usuario.json()
+            }
+        return None
 
     @classmethod
     def atualizar_usuario(cls, id, usuario):
