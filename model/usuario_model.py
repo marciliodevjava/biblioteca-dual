@@ -54,8 +54,18 @@ class UsuarioModel(db.Model):
             return None
 
     @classmethod
-    def atualizar_usuario(cls):
-        pass
+    def atualizar_usuario(cls, buscar_usuario, usuario):
+        try:
+            buscar_usuario.nome = usuario['nome']
+            buscar_usuario.email = usuario['email']
+            buscar_usuario.genero = usuario['genero']
+            buscar_usuario.ddi = usuario['ddi']
+            buscar_usuario.ddd = usuario['ddd']
+            buscar_usuario.telefone = usuario['telefone']
+            db.session.commit()
+            return buscar_usuario
+        except BaseException as b:
+            return None
 
     @classmethod
     def deletar_usuario(cls):
