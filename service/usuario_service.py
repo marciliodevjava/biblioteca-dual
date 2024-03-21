@@ -28,11 +28,22 @@ class UsuarioService:
 
     @classmethod
     def buscar_usuario(cls, id):
-        pass
+        usuario = UsuarioModel.buscar_usuario_id(id)
+        if usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_BUSCADO_COM_SUCESSO.value,
+                'usuario': usuario.json()
+            }
+        return None
 
     @classmethod
     def atualizar_usuario(cls, id, usuario):
-        pass
+        buscar_usuario = UsuarioModel.buscar_usuario_id(id)
+        if usuario:
+            buscar_usuario = UsuarioModel.atualizar_usuario(buscar_usuario, usuario)
+            if buscar_usuario:
+                return buscar_usuario.json()
+            return None
 
     @classmethod
     def deletar_usuario(cls, id):
