@@ -16,10 +16,24 @@ class UsuarioResource(Resource):
         return usuario, 201
 
     def get(self, id):
-        pass
+        usuario = UsuarioService.buscar_usuario(id)
+        if not usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_NAO_ENCONTRADO.value
+            }, 404
+        return usuario, 200
 
     def put(self, id):
-        pass
+        usuario = UsuarioShema().load(request.json())
+        usuario = UsuarioService.atualizar_usuario(id, usuario)
+        if not usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_NAO_ENCONTRADO
+            }, 404
+        return {
+            'message': UsuarioMessage.USUARIO_ATUALIZADO_COM_SUCESSO.value,
+            'usuario': usuario
+        }, 200
 
     def delete(self, id):
         pass
