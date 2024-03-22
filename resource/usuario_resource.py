@@ -44,3 +44,12 @@ class UsuarioResource(Resource):
         return {
             'message': UsuarioMessage.USUARIO_DELETADO_COM_SUCESSO.value
         }
+
+
+class LoginResource(Resource):
+
+    def post(self):
+        pass
+
+    def get(self):
+        pass
