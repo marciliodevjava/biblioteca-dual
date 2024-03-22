@@ -14,6 +14,7 @@ class ErroServidorMessage(Enum):
 
 
 class UsuarioMessage(Enum):
+    USUARIO_NAO_FOI_DELETADO = 'Usuário não foi deletado com sucesso.'
     USUARIO_ATUALIZADO_COM_SUCESSO = 'Usuário atualizado com sucesso.'
     USUARIO_NAO_ENCONTRADO = 'Usuário não encontrado.'
     USUARIO_BUSCADO_COM_SUCESSO = 'Usuário buscado com sucesso.'
