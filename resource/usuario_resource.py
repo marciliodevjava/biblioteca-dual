@@ -36,4 +36,11 @@ class UsuarioResource(Resource):
         }, 200
 
     def delete(self, id):
-        pass
+        usuario = UsuarioService.deletar_usuario(id)
+        if not usuario:
+            return {
+                'message': UsuarioMessage.USUARIO_NAO_FOI_DELETADO.value
+            }, 500
+        return {
+            'message': UsuarioMessage.USUARIO_DELETADO_COM_SUCESSO.value
+        }
