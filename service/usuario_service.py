@@ -47,4 +47,5 @@ class UsuarioService:
 
     @classmethod
     def deletar_usuario(cls, id):
-        pass
+        usuario = UsuarioModel.deletar_usuario(id)
+        return usuario
