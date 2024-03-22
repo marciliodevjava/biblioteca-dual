@@ -69,7 +69,15 @@ class UsuarioModel(db.Model):
 
     @classmethod
     def deletar_usuario(cls):
-        pass
+        try:
+            usuario = cls.buscar_usuario_id(id)
+            if usuario:
+                db.session.delete(usuario)
+                db.session.commit()
+                return True
+            return False
+        except BaseException as b:
+            return False
 
     @classmethod
     def buscar_usuario_id(cls, id):
