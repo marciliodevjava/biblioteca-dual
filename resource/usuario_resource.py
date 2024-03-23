@@ -53,3 +53,9 @@ class LoginResource(Resource):
 
     def get(self):
         pass
+
+    def put(self):
+        pass
+
+    def delete(self):
+        pass
